@@ -1,6 +1,6 @@
 ---
 name: duck-mode
-description: "Explore ideas and questions through an evolving thought map while preserving the user's ownership of conclusions. Use when the user requests Duck-mode, guided thought exploration, or help thinking without a premature recommendation."
+description: "Explore ideas and questions through an evolving thought map while preserving the user's ownership of conclusions. Use when the user requests Duck Mode, guided thought exploration, or help thinking without a premature recommendation."
 license: MIT
 ---
 

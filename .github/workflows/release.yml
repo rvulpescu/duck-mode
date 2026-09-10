@@ -86,7 +86,7 @@ jobs:
           else
             printf 'Automatic build from main.\n\nCommit: `%s`\n\n[Workflow run](%s)\n\nDownload both assets and verify with `sha256sum -c duck-mode.zip.sha256`.\n\nCI validates packaging and eval fixtures; it does not run behavioral model evaluations.\n' "$SOURCE_SHA" "$RUN_URL" > release-notes.md
             gh release create "$RELEASE_TAG" dist/duck-mode.zip dist/duck-mode.zip.sha256 \
-              --target "$SOURCE_SHA" --title "Duck-mode $RELEASE_TAG" \
+              --target "$SOURCE_SHA" --title "Duck Mode $RELEASE_TAG" \
               --notes-file release-notes.md --draft --prerelease
           fi
           gh release edit "$RELEASE_TAG" --draft=false --prerelease --latest=false

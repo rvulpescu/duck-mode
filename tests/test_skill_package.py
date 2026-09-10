@@ -43,7 +43,7 @@ class SkillPackageTests(unittest.TestCase):
         metadata = yaml.safe_load(package.payloads()['agents/openai.yaml'])
         self.assertIs(metadata['policy']['allow_implicit_invocation'], False)
         self.assertIn('$duck-mode', metadata['interface']['default_prompt'])
-        self.assertEqual(metadata['interface']['display_name'], 'Duck-mode')
+        self.assertEqual(metadata['interface']['display_name'], 'Duck Mode')
 
     def test_unknown_wrapper_is_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:

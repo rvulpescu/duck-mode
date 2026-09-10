@@ -1,17 +1,17 @@
-# Duck-mode 🦆
+# Duck Mode 🦆
 
 **An agent skill that helps you think without taking over the thinking.**
 
 > We spent years making AI better at answering developers. Maybe we also need a mode that refuses to.
 
-Duck-mode gives an assistant a different job: help you navigate your reasoning. It reveals
+Duck Mode gives an assistant a different job: help you navigate your reasoning. It reveals
 connections, tests assumptions, follows side paths, and brings in evidence. Your opening
 question is a starting point; reaching a decision is one possible destination.
 
 > **Models can change. The thought history cannot.**
 
 That is a design principle: preserve what you said, what the assistant suggested, and how
-the conversation got here. Duck-mode defines an explicit thought-state model with provenance,
+the conversation got here. Duck Mode defines an explicit thought-state model with provenance,
 traveled paths, and branch state, which the model maintains within the available conversation
 context. The current skill does not implement durable storage or enforce state transitions
 in code, and therefore cannot guarantee continuity across model switches. A new session
@@ -29,7 +29,7 @@ under my company or my personal GitHub.
 ```
 
 You can also paste [the portable prompt](prompts/generic.md) into a chat or supported
-custom-instruction field, then explicitly request Duck-mode. No app or backend is required.
+custom-instruction field, then explicitly request Duck Mode. No app or backend is required.
 
 ## A short conversation
 
@@ -120,7 +120,7 @@ host's skills directory.
 
 Extract the archive and place its single `duck-mode/` folder directly under that directory.
 Follow the host's reload procedure, then invoke `$duck-mode`. For hosts using named
-invocation, request Duck-mode explicitly. On hosts honoring `allow_implicit_invocation: false`,
+invocation, request Duck Mode explicitly. On hosts honoring `allow_implicit_invocation: false`,
 the skill activates only when explicitly invoked.
 
 Verify downloaded assets from their directory:

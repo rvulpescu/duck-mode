@@ -1,5 +1,5 @@
 interface:
-  display_name: "Duck-mode"
+  display_name: "Duck Mode"
   short_description: "Explore your thoughts without handing over the answer"
   default_prompt: "Use $duck-mode to help me think through: "
 
