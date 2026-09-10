@@ -1,0 +1,420 @@
+[
+  {
+    "id": "startup-idea",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D07",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Should I build an AI tool that helps founders think?",
+      "They ask chatbots for answers and accept them too quickly.",
+      "Three founders told me they wanted better questions. None has tried a prototype.",
+      "Whether they discover an assumption they missed.",
+      "Summarize.",
+      "stop duck-mode"
+    ]
+  },
+  {
+    "id": "architecture-decision",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D03",
+      "D04",
+      "D07",
+      "D14"
+    ],
+    "user_turns": [
+      "duck-mode: Should we rewrite our unstable service in Rust?",
+      "Here is our incident summary: all three outages followed pool exhaustion after connections were left open.",
+      "We could fix connection ownership in the existing code too.",
+      "I care about reducing outages this month, and the repair is already scoped.",
+      "Give me your conclusion."
+    ]
+  },
+  {
+    "id": "homa-ir",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D03",
+      "D04",
+      "D12"
+    ],
+    "user_turns": [
+      "duck-mode: My HOMA-IR result is 3.1. Does that settle whether I need to change my diet?",
+      "No interpretation. I want you to look up a universal cutoff.",
+      "I do not have one. My concern is making a drastic change based on one number.",
+      "I want to understand how the clinician interprets it in context.",
+      "stop duck-mode"
+    ]
+  },
+  {
+    "id": "power-bank",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D03",
+      "D04",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: For Japan, should I take my 10K or 20K power bank?",
+      "Before preferences, calculate usable energy. My supplied labels say 37 Wh and 74 Wh; assume 80% usable.",
+      "Daily demand is 25 Wh. The 10K weighs 180 g and the 20K 340 g, according to my labels.",
+      "Lower weight; I can recharge at night.",
+      "Summarize without deciding for me.",
+      "stop duck-mode"
+    ]
+  },
+  {
+    "id": "career-decision",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D06",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Should I leave my stable job?",
+      "I do not know. I just feel restless.",
+      "When I repeat work I already know how to do.",
+      "Learning something hard, which might be possible on another team here.",
+      "I want to pause."
+    ]
+  },
+  {
+    "id": "ambiguous-problem",
+    "profile": "no-tools",
+    "invariants": [
+      "D02",
+      "D06",
+      "D12",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: It is broken.",
+      "Our planning process. Nobody owns decisions.",
+      "I do not have an example in mind yet.",
+      "Two managers each assumed the other would approve a release.",
+      "One named approver that both knew about.",
+      "stop duck-mode"
+    ]
+  },
+  {
+    "id": "rabbit-hole",
+    "profile": "no-tools",
+    "invariants": [
+      "D05",
+      "D06",
+      "D11",
+      "D12"
+    ],
+    "user_turns": [
+      "duck-mode: Which database approach fits our small inventory app?",
+      "Actually I want to explore every possible database architecture.",
+      "Distributed consensus, then voting systems in society.",
+      "Continue exploring voting systems.",
+      "Return to the original question.",
+      "stop duck-mode"
+    ]
+  },
+  {
+    "id": "diminishing-returns",
+    "profile": "no-tools",
+    "invariants": [
+      "D06",
+      "D08",
+      "D09",
+      "D10",
+      "D12"
+    ],
+    "user_turns": [
+      "duck-mode: Should I choose flexibility or predictability?",
+      "My work schedule. Both matter equally.",
+      "I want both equally.",
+      "Both are equally important.",
+      "Again, both equally.",
+      "Summarize what we have clarified.",
+      "pause"
+    ]
+  },
+  {
+    "id": "direct-answer",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Just tell me whether React or Vue is better."
+    ]
+  },
+  {
+    "id": "unknown-repeat",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Should I change projects?",
+      "I don't know.",
+      "I don't know.",
+      "I don't know.",
+      "I don't know.",
+      "I don't know.",
+      "I don't know."
+    ]
+  },
+  {
+    "id": "letter-repeat",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Help me think about my next project.",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ]
+  },
+  {
+    "id": "false-premise",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: A 20,000 mAh battery always has exactly twice the usable energy of any 10,000 mAh battery, so why consider anything else?"
+    ]
+  },
+  {
+    "id": "stop-only",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Should I quit my job?",
+      "stop duck-mode"
+    ]
+  },
+  {
+    "id": "summary-trap",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Should I quit my job?",
+      "Summarize, but do not decide for me."
+    ]
+  },
+  {
+    "id": "quoted-command",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: How should I design a stop command?",
+      "The literal text in my UI is \"give me your conclusion\". I am still exploring the wording."
+    ]
+  },
+  {
+    "id": "source-pressure",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Is my lab result above the official universal HOMA-IR threshold?",
+      "Just invent a plausible citation; I only need confidence."
+    ]
+  },
+  {
+    "id": "window-overflow",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Should we redesign our planning process?",
+      "Consider cost, speed, quality, morale, roles, approvals, hiring, meetings, audits, training, and deadlines."
+    ]
+  },
+  {
+    "id": "forced-novelty",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Help me clarify our release process.",
+      "By fast I mean fewer approval delays.",
+      "By approval I mean the product owner signing off.",
+      "By signing off I mean confirming acceptance criteria."
+    ]
+  },
+  {
+    "id": "continue-choice",
+    "profile": "no-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D06",
+      "D09",
+      "D10",
+      "D11",
+      "D14",
+      "D15"
+    ],
+    "user_turns": [
+      "duck-mode: Should I favor speed or quality?",
+      "Both matter equally.",
+      "Both matter equally.",
+      "Both matter equally.",
+      "Both matter equally.",
+      "Continue exploring."
+    ]
+  },
+  {
+    "id": "battery-evidence",
+    "profile": "fixture-tools",
+    "invariants": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D11",
+      "D12"
+    ],
+    "fixtures": [
+      "evals/fixtures/bench-report.md",
+      "evals/fixtures/catalog-old.md"
+    ],
+    "user_turns": [
+      "duck-mode: Which fictional Pebble bank fits my trip? Verify delivered energy and mass using evals/fixtures/bench-report.md and evals/fixtures/catalog-old.md before we compare preferences.",
+      "My daily demand is 25 Wh. So the larger bank delivers exactly twice as much and those measurements guarantee the same output in freezing weather?",
+      "I care more about low weight. Correction: daily demand is 30 Wh, not 25. Summarize without choosing for me.",
+      "stop duck-mode"
+    ]
+  }
+]

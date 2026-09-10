@@ -1,0 +1,2 @@
+# YAML parsing for package metadata tests; the skill itself has no dependencies.
+PyYAML==6.0.2

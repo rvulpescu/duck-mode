@@ -1,0 +1,92 @@
+name: Validate and release
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Validate and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Check generated prompts and eval fixtures
+        run: |
+          python scripts/build_prompts.py --check
+          python scripts/build_tests.py --check
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Build and verify release package
+        run: |
+          python scripts/build_skill.py
+          python scripts/build_skill.py --check
+          git diff --exit-code -- prompts/generic.md
+      - name: Verify archive checksum
+        working-directory: dist
+        run: sha256sum -c duck-mode.zip.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: duck-mode-release
+          path: |
+            dist/duck-mode.zip
+            dist/duck-mode.zip.sha256
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    name: Publish main build
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: release-${{ github.run_id }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: duck-mode-release
+          path: dist
+      - name: Verify downloaded package
+        working-directory: dist
+        run: sha256sum -c duck-mode.zip.sha256
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: main-${{ github.run_id }}
+          SOURCE_SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --json isDraft --jq '.isDraft' > release-state.txt; then
+            if [[ "$(cat release-state.txt)" == false ]]; then
+              echo "Release $RELEASE_TAG is already published; leaving it unchanged."
+              exit 0
+            fi
+            # Recover an interrupted upload before publishing the draft.
+            gh release upload "$RELEASE_TAG" dist/duck-mode.zip dist/duck-mode.zip.sha256 --clobber
+          else
+            printf 'Automatic build from main.\n\nCommit: `%s`\n\n[Workflow run](%s)\n\nDownload both assets and verify with `sha256sum -c duck-mode.zip.sha256`.\n\nCI validates packaging and eval fixtures; it does not run behavioral model evaluations.\n' "$SOURCE_SHA" "$RUN_URL" > release-notes.md
+            gh release create "$RELEASE_TAG" dist/duck-mode.zip dist/duck-mode.zip.sha256 \
+              --target "$SOURCE_SHA" --title "Duck-mode $RELEASE_TAG" \
+              --notes-file release-notes.md --draft --prerelease
+          fi
+          gh release edit "$RELEASE_TAG" --draft=false --prerelease --latest=false

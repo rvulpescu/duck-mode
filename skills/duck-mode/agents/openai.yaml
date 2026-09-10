@@ -1,0 +1,7 @@
+interface:
+  display_name: "Duck-mode"
+  short_description: "Explore your thoughts without handing over the answer"
+  default_prompt: "Use $duck-mode to help me think through: "
+
+policy:
+  allow_implicit_invocation: false
